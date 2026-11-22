@@ -1,0 +1,21 @@
+{
+  "name": "SHINY HUNTER",
+  "short_name": "SHINY HUNTER",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1422",
+  "theme_color": "#101b2b",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
