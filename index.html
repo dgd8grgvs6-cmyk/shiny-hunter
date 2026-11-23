@@ -1,1 +1,42 @@
-const CACHE="shiny-hunter-v4";const FILES=["./","./index.html","./style.css","./app.js","./manifest.webmanifest","./icon-192.png","./icon-512.png"];self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match("./index.html"))))});
+YOUR SHINY JOURNEY
+✨ SHINY HUNTER
+
+⚙
+🔥
+CURRENT HUNT
+ファイヤー
+
+リーフグリーン
+
+挑戦中
+ENCOUNTERS
+今回の厳選回数
+
+編集
+0
+回
+＋ 1 回カウント
+－ 1  ＋ 10  ＋ 100
+回数を直接編集
+SESSION TIMER
+00:00:00
+▶ 開始
+途中経過を保存  ✨ 色違いが出た！
+TOTAL TRIES
+0
+累計試行回数
+COMPLETED HUNTS
+0
+色違い達成
+JOURNAL
+厳選履歴
+
+すべて表示
+まだ履歴はありません。カウントを保存してみよう！
+
+ODDS ESTIMATOR
+遭遇確率の目安
+
+1回あたりの設定確率1 / 8,192
+現在回数で1回以上出る確率0.00%
+独立試行・毎回同じ確率と仮定した理論値です。ゲームや状況により実際の確率は異なります。
