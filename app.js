@@ -37,6 +37,8 @@ $("plusOne").onclick=async()=>{state.count++;await persist();render()};
 $("minusOne").onclick=async()=>{state.count=Math.max(0,state.count-1);await persist();render()};
 $("plusTen").onclick=async()=>{state.count+=10;await persist();render()};
 $("plusHundred").onclick=async()=>{state.count+=100;await persist();render()};
+$("editCountBtn").onclick=()=>{$("countInput").value=state.count;$("countDialog").showModal()};
+$("countForm").onsubmit=async e=>{e.preventDefault();const raw=$("countInput").value;const value=Number(raw);if(raw===""||!Number.isSafeInteger(value)||value<0){toast("0以上の整数を入力してください");return}state.count=value;await persist();$("countDialog").close();render();toast("回数を変更しました")};
 $("timerBtn").onclick=async()=>{if(state.running){state.seconds=elapsed();state.running=false;state.startedAt=null}else{state.running=true;state.startedAt=Date.now()}await persist();render()};
 $("saveProgress").onclick=saveProgress;
 $("shinyFound").onclick=()=>{if(!state.count){toast("まず回数をカウントしてね");return}$("resultSummary").textContent=`${state.pokemon}：${state.count.toLocaleString("ja-JP")} 回で達成！`;$("resultDialog").showModal()};
